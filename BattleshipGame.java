@@ -10,9 +10,14 @@
 // Last Date Modified: 07/02/2016
 //
 ///////////////////////////////////////////////////////////////////////////////
-
+import javax.swing.*;
 public class BattleshipGame.java {
 	public static void main(String[] args) {
 		System.out.println("Lets play some Battleship!");
+		JOptionPane.showMessageDialog(
+			null, 
+			"I Want to play a game...", 
+			"Lets Begin",
+			JOptionPane.PLAIN_MESSAGE);
 	}
 }
