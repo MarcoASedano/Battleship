@@ -11,7 +11,7 @@
 //
 ///////////////////////////////////////////////////////////////////////////////
 import javax.swing.*;
-public class BattleshipGame.java {
+public class BattleshipGame {
 	public static void main(String[] args) {
 		System.out.println("Lets play some Battleship!");
 		JOptionPane.showMessageDialog(
