@@ -50,30 +50,51 @@
 
  	// returns the associated column number (ex. A = 0, B = 1, etc)
  	// also adjusts for array indexing being 1 less
- 	public int adjustColumnNumber(String column)
-    {
+ 	public int adjustColumnNumber(char column) {
+        char columnToUpper = Character.toUpperCase(column);
         int adjustedColumn = 0;
         
-        //iterate through letters A-J, return 
-        //adjusted column number
-        for(char letter = "A"; letter <= "J"; letter++)
-        {
-            if(column.compareToIgnoreCase(letter) == 0)
-            {
-                return adjustedColumn;
-            }
-            else
-            {
-                return null;
-            }
-            adjustedColumn++;
-        }
+        switch(columnToUpper) {
+            case 'A' :
+                adjustedColumn = 0;
+                break;
+            case 'B' :
+                adjustedColumn = 1;
+                break;
+            case 'C' :
+                adjustedColumn = 2;
+                break;
+            case 'D' :
+                adjustedColumn = 3;
+                break;
+            case 'E' :
+                adjustedColumn = 4;
+                break;
+            case 'F' :
+                adjustedColumn = 5;
+                break;
+            case 'G' :
+                adjustedColumn = 6;
+                break;
+            case 'H' :
+                adjustedColumn = 7;
+                break;
+            case 'I' :
+                adjustedColumn = 8;
+                break;
+            case 'J' :
+                adjustedColumn = 9;
+                break;
+            default:
+                System.out.println("Column not recognized");
+                break;
+        }//end switch
+        return adjustedColumn;
     }//end method adjustColumnNumber
 
  	// returns the associated row number
  	// adjusts for array indexing being 1 less
- 	public int adjustedRowNumber(int row)
-    {
+ 	public int adjustedRowNumber(int row) {
         int adjustedRow = row - 1;
         return adjustedRow;
  
