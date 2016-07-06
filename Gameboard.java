@@ -15,6 +15,8 @@
  	private static FINAL int BOARD_SIZE = 100;
  	private static FINAL int ROWS = 10;
  	private static FINAL int COLUMNS = 10;
+     
+    //isn't it [ROWS][COLUMNS] for a two-dimensional array?
  	private int board[COLUMNS][ROWS];
 
  	// initialize a game board with all of it's values equal to 0
@@ -43,10 +45,32 @@
 
  	// returns the associated column number (ex. A = 0, B = 1, etc)
  	// also adjusts for array indexing being 1 less
- 	// public int adjustColumnNumber(String column)
+ 	public int adjustColumnNumber(String column)
+    {
+        int adjustedColumn = 0;
+        
+        //iterate through letters A-J, return 
+        //adjusted column number
+        for(char letter = "A"; letter <= "J"; letter++)
+        {
+            if(column.compareToIgnoreCase(letter) == 0)
+            {
+                return adjustedColumn;
+            }
+            else
+            {
+                return null;
+            }
+            adjustedColumn++;
+        }
+    }//end method adjustColumnNumber
 
  	// returns the associated row number
  	// adjusts for array indexing being 1 less
- 	//public int adjustedRowNumber(int row)
+ 	public int adjustedRowNumber(int row)
+    {
+        int adjustedRow = row - 1;
+        return adjustedRow;
  
- }
+    }//end method adjustedRowNumber
+ }//end class Gameboard
