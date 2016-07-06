@@ -97,6 +97,5 @@
  	public int adjustedRowNumber(int row) {
         int adjustedRow = row - 1;
         return adjustedRow;
- 
     }//end method adjustedRowNumber
  }//end class Gameboard
