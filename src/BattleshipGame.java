@@ -21,5 +21,16 @@ public class BattleshipGame {
 			"I Want to play a game...", 
 			"Lets Begin",
 			JOptionPane.PLAIN_MESSAGE);
+        
+        //TEST CODE>>>>DELETE THIS WHEN DONE
+        //
+        //
+        Gameboard newBoard = new Gameboard();
+        newBoard.showBoard();
+        //
+        //
+        //////////////////////////////////////
+        
+        
 	}//end method main
 }//end class BattleshipGame

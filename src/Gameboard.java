@@ -98,4 +98,29 @@
         int adjustedRow = row - 1;
         return adjustedRow;
     }//end method adjustedRowNumber
+    
+    //updates board in terminal
+    //1(hit) shown as X
+    //0(not hit) shown as O
+    //-1(miss) shown as ~
+    public void showBoard() {
+        System.out.println("\tA \tB \tC \tD \tE \tF \t G \tH \tI \tJ");
+        System.out.println();
+        
+        for(int x = 0; x < ROWS; x++) {
+            System.out.print((x + 1)+"");
+            for(int y = 0; y < COLUMNS; y++) {
+                if(board[x][y] == 1) {
+                    System.out.print("\t" + "X");    
+                }
+                else if(board[x][y] == 0) {
+                    System.out.print("\t" + "O");
+                }
+                else if(board[x][y] == -1) {
+                    System.out.print("\t" + "~");
+                }
+            }//end inner for loop
+            System.out.println();
+        }//end outer for loop
+    }//end method showBoard
  }//end class Gameboard
