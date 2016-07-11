@@ -28,30 +28,42 @@
  				type = 5;
  				size = 5;
  				sunk = 0;
+ 				location = new int[5][5];
  				break;
  			case 4:
  				type = 4;
  				size = 4;
  				sunk = 0;
+ 				location = new int[4][4];
  				break;
 			case 3:
 				type = 3;
 				size = 3;
 				sunk = 0;
+				location = new int[3][3];
 				break;
 			case 2:
 				type = 2;
 				size = 3;
 				sunk = 0;
+				location = new int[2][2];
 				break;
 			case 1:
 				type = 1;
 				size = 2;
 				sunk = 0;
+				location = new int[2][2];
 				break;
 			default:
 				System.out.println("Invalid ship type!");
  		}
  	}
 
+
+ 	// sets the location for a ship
+ 	// takes a column (already converted to a number) and a row
+ 	// checks have to be made to make sure imputed 
+ 	public void setShipLocation(int row, int column) {
+
+ 	}
  }

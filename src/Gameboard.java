@@ -10,6 +10,8 @@
  * 
  */
 
+import java.util.ArrayList;
+
  public class Gameboard {
 
  	private static final int BOARD_SIZE = 100;
@@ -88,9 +90,9 @@
             default:
                 System.out.println("Column not recognized");
                 break;
-        }//end switch
+        }
         return adjustedColumn;
-    }//end method adjustColumnNumber
+    }
 
  	// returns the associated row number
  	// adjusts for array indexing being 1 less
@@ -119,8 +121,10 @@
                 else if(board[x][y] == -1) {
                     System.out.print("\t" + "~");
                 }
-            }//end inner for loop
+            }
             System.out.println();
-        }//end outer for loop
-    }//end method showBoard
- }//end class Gameboard
+            System.out.println();
+        }
+    }
+
+ }

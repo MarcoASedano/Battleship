@@ -1,7 +1,7 @@
 # Battleship
 A two person turned based game where each player tries to sink the opposing player's battleships. First to sink all of the battleships wins.
 
-#buld.xml
+#build.xml
 Ant file that compiles, runs, and cleans the project files
 	-ant clean
 		Deletes the build directory, including all generated .class files
