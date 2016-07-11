@@ -118,10 +118,8 @@ import java.util.Scanner;
                 System.out.println("Row is Valid!");
                 rowValid = true;
             }//end if   
-            else
-            {
-                while(rowValid == false)
-                {
+            else {
+                while(rowValid == false) {
                     //prompt user for new row
                     System.out.println("Row not recognized! Please enter a "+
                                        "number between 1 and 10");
