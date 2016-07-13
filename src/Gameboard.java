@@ -52,7 +52,7 @@ import java.util.ArrayList;
 
  	// returns the associated column number (ex. A = 0, B = 1, etc)
  	// also adjusts for array indexing being 1 less
- 	public int adjustColumnNumber(char column) {
+ 	public static int adjustColumnNumber(char column) {
         char columnToUpper = Character.toUpperCase(column);
         int adjustedColumn = 0;
         
@@ -96,7 +96,7 @@ import java.util.ArrayList;
 
  	// returns the associated row number
  	// adjusts for array indexing being 1 less
- 	public int adjustedRowNumber(int row) {
+ 	public static int adjustedRowNumber(int row) {
         int adjustedRow = row - 1;
         return adjustedRow;
     }//end method adjustedRowNumber
