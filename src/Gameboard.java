@@ -9,8 +9,9 @@
  * @version      1.0
  * 
  */
-
+import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 
  public class Gameboard {
 
@@ -55,49 +56,71 @@ import java.util.ArrayList;
  	public static int adjustColumnNumber(char column) {
         char columnToUpper = Character.toUpperCase(column);
         int adjustedColumn = 0;
+        int counter = 0;
+        boolean isValid = false;
         
-        switch(columnToUpper) {
-            case 'A' :
-                adjustedColumn = 0;
-                break;
-            case 'B' :
-                adjustedColumn = 1;
-                break;
-            case 'C' :
-                adjustedColumn = 2;
-                break;
-            case 'D' :
-                adjustedColumn = 3;
-                break;
-            case 'E' :
-                adjustedColumn = 4;
-                break;
-            case 'F' :
-                adjustedColumn = 5;
-                break;
-            case 'G' :
-                adjustedColumn = 6;
-                break;
-            case 'H' :
-                adjustedColumn = 7;
-                break;
-            case 'I' :
-                adjustedColumn = 8;
-                break;
-            case 'J' :
-                adjustedColumn = 9;
-                break;
-            default:
-                System.out.println("Column not recognized");
-                break;
-        }
+        //if column is valid, loop through characters and use
+        //counter to set adjusted value
+        //otherwise, keep prompting for new input until valid
+        if(columnToUpper >= 'A' && columnToUpper <= 'J') {
+            for(char letter = 'A'; letter <= 'J'; letter++) {
+                if(columnToUpper == letter) {
+                    adjustedColumn = counter;
+                    break;
+                }//end if
+                else {
+                    counter++;
+                }//end else
+            }//end for
+        }//end if
+        else {
+            while(isValid == false)
+            {
+                System.out.println("Column not recognized!"+
+                               "Please Enter a letter between A and J");
+                Scanner userInput = new Scanner(System.in);
+                char newInput = userInput.next(".").charAt(0);
+                columnToUpper = Character.toUpperCase(newInput);
+
+                if(columnToUpper >= 'A' && columnToUpper <= 'J') {
+                    for(char letter = 'A'; letter <= 'J'; letter++) {
+                        if(columnToUpper == letter) {
+                            adjustedColumn = counter;
+                            isValid = true;
+                        }//end if
+                        else {
+                            counter++;
+                        }//end else
+                    }//end for
+                }//end if
+            }//end while
+        }//end else
         return adjustedColumn;
-    }
+    }//end method adjustColumnNumber
 
  	// returns the associated row number
  	// adjusts for array indexing being 1 less
  	public static int adjustedRowNumber(int row) {
-        int adjustedRow = row - 1;
+        boolean isValid = false;
+        int adjustedRow = 0; 
+        
+        adjustedRow = row - 1;
+        
+        //if adjustedRow is out of bounds, keep prompting
+        //until row is valid
+        if((adjustedRow >= 0 && adjustedRow <= 9) == false) {
+            while(isValid == false) {
+                System.out.println("Row not recognized!\n"+
+                               "Please enter a number between 1 and 10");
+                Scanner userInput = new Scanner(System.in);
+                int newInput = userInput.nextInt();
+                adjustedRow = newInput - 1;
+
+                if(adjustedRow >=0 && adjustedRow <= 9 ) {
+                    isValid = true;
+                }//end if
+            }//end while    
+        }//end if
         return adjustedRow;
     }//end method adjustedRowNumber
     

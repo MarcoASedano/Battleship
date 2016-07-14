@@ -7,7 +7,7 @@
  * @version      1.0
  * 
  */
-
+import java.util.Scanner;
  public class Battleship {
  
  	private int size;
@@ -56,14 +56,26 @@
 				break;
 			default:
 				System.out.println("Invalid ship type!");
- 		}
- 	}
-
+ 		}//end switch
+ 	}//end constructor
 
  	// sets the location for a ship
  	// takes a column (already converted to a number) and a row
  	// checks have to be made to make sure imputed 
- 	public void setShipLocation(int row, int column) {
+ 	public void setShipLocation(char column, int row) {
+        boolean doesExist = false;
+        int adjustedColumn = 0;    
+        int adjustedRow = 0;
 
- 	}
- }
+        adjustedColumn = Gameboard.adjustColumnNumber(column);
+        adjustedRow = Gameboard.adjustedRowNumber(row);
+
+        
+        ////////////////////////////////////////////
+        //location[adjustedColumn][adjustedRow] = 0;
+        ////////////////////////////////////////////
+        ///////////THIS GIVES NULL EXCEPTION^^^^^^^/
+        System.out.println("\nShip created at location " + column + "-" + row + "\n");
+
+ 	}//end method setShipLocation
+ }//end class Battleship
