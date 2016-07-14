@@ -28,8 +28,8 @@ public class BattleshipGame {
         ship1.setShipLocation('C', 3);
         
         System.out.println("\nCreating ship2");
-        Battleship ship2 = new Battleship(50);
-        ship2.setShipLocation('X', 22);
+        Battleship ship2 = new Battleship(2);
+        ship2.setShipLocation('D', 3);
         //
         //
         //////////////////////////////////////     
